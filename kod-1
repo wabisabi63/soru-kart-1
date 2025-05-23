@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rastgele Soru Kartı</title>
+  <style>
+    body { font-family: Arial; display: flex; flex-direction: column; align-items: center; margin-top: 50px; }
+    #questionBox { border: 2px solid #444; padding: 20px; width: 300px; min-height: 100px; text-align: center; font-size: 18px; margin-bottom: 20px; border-radius: 10px; }
+    button { padding: 10px 20px; font-size: 16px; border-radius: 10px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Rastgele Soru Kartı</h1>
+  <div id="questionBox">Soru için butona bas!</div>
+  <button onclick="getRandomQuestion()">Yeni Soru</button>
+
+  <script>
+    const questions = [
+      "Kendini üç kelimeyle tanımlar mısın?",
+      "En sevdiğin film nedir ve neden?",
+      "Boş zamanlarında neler yaparsın?",
+      "Yurt dışında yaşamak ister misin? Neden?",
+      "İdeal tatilin nasıl olurdu?"
+      // Buraya istediğin kadar soru ekleyebilirsin.
+    ];
+
+    function getRandomQuestion() {
+      const randomIndex = Math.floor(Math.random() * questions.length);
+      document.getElementById("questionBox").innerText = questions[randomIndex];
+    }
+  </script>
+</body>
+</html>
